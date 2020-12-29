@@ -3,44 +3,40 @@
 namespace LQ {
 
 class Node {
-    Node* parent() const;
-    Node* firstChild() const;
-    Node* lastChild() const;
-    // Node* nthChild(LQindex nth) const;
-    Node* previousSibling() const;
-    Node* nextSibling() const;
-    // Node const* nthSibling(LQindex nth) const;
-    // LQsize  childrenCount() const;
+public:
+    virtual ~Node();
 
-    void setNextSibling(Node* nextSibling);
+    Node* parentNode() const { return parentNode_; }
+    Node* firstChild() const { return firstChild_; }
+    Node* lastChild() const { return lastChild_; }
+    Node* previousSibling() const { return previousSibling_; }
+    Node* nextSibling() const { return nextSibling_; }
 
-    Node& appendChild(Node* child);
-    Node& appendChild(Node& child);
-    // Node& insertChild(LQindex index, Node& child);
-    Node& insertChildBefore(Node& newChild, Node& child);
-    Node& insertChildAfter(Node& newChild, Node& child);
+    Node* insertBefore(Node* node, Node* child);
+    Node* appendChild(Node* node) { return insertBefore(node, nullptr); }
+    Node* removeChild(Node* child);
 
-    Node& detach();
-    Node& removeChild(Node& child);
-    // Node& removeChild(LQindex index);
-    Node& removeFirstChild();
-    Node& removeLastChild();
-    Node& removeChildren(Node& newParent);
+    void remove();
 
-    Node& swapWith(Node& quark);
-    Node& swapChildren(Node& first, Node& second);
-    // Node& swapChildren(LQindex first, LQindex second);
+    void setParentNode(Node* parent) { parentNode_ = parent; }
+    void setFirstChild(Node* child) { firstChild_ = child; }
+    void setLastChild(Node* child) { lastChild_ = child; }
+    void setPreviousSibling(Node* previous) { previousSibling_ = previous; }
+    void setNextSibling(Node* next) { nextSibling_ = next; }
 
 protected:
     Node();
-    virtual ~Node();
 
-    Node* m_parent;
-    Node* m_prevSibling;
-    Node* m_nextSibling;
-    Node* m_firstChild;
-    Node* m_lastChild;
-    // LQsize  m_childrenCount;
+private:
+    void insertBeforeBase(Node& node, Node& child);
+    void appendChildBase(Node& child);
+    void removeChildBase(Node& child);
+
+    Node* parentNode_;
+    Node* firstChild_;
+    Node* lastChild_;
+    Node* previousSibling_;
+    Node* nextSibling_;
 };
 
 } // namespace LQ

@@ -1,0 +1,48 @@
+// class MyComponent : public LQ::Component {
+// public:
+//     MyComponent(LQ::RuleSet ruleset) : Component(ruleset)
+//     {
+//         // on<MouseClickEvent>(onclick);
+//     }
+// };
+
+// int main() {
+//     LQ::ComponentRef c = new LQ::Component(LQ::RuleSet("my-css-like-cls"));
+
+//     c->tree()
+//         .add(new LQ::Component(LQ::RuleSet("my-class")
+//             .x("30px")
+//             .y("100px")
+//             .width("100%")
+//             .height("20%")))
+//         .add(new MyComponent(LQ::RuleSet("my-btn")));
+
+//     return EXIT_SUCCESS;
+// }
+
+/**
+ * offset(unit x, unit y, unit float = false)
+ * {
+ *   this.pos += (x, y);
+ *   this.float = float;
+ * }
+ * 
+ * c'est mon texte avec un mot {bf, offset[3px 2px]: important} dedans
+ * 
+ * Component c = new Component(RuleSet("my-css-like-cls"));
+ * 
+ * RuleSet myRules = RuleSet("my-class")
+ *   .pos("30px 100px")
+ *   .dim("100% 20%");
+ * 
+ * c.tree()
+ *     .append(new Component(myRules))
+ *     .append(new Button(new RuleSet()
+ *         .borderRadius("5px")))
+ *     .props()
+ *          .onMouseClick(event -> System.out.println(event.x));
+ * 
+ * c.append(new Component(myRules));
+ * Component child = this.firstComponentChild();
+ * 
+ */
