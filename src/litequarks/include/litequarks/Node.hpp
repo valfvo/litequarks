@@ -3,19 +3,6 @@
 namespace LQ {
 
 class Node {
-    // accessors
-    /*
-     * {
-     *     NodeRef a = node.firstChild();
-     *     a.remove();
-     * }
-     * ComponentRef a = node.firstComponentChild();
-     * 
-     * Component* = new Component
-     * 
-     * tree()
-     *   .add(new LQ::Component(new LQ::ClassList("small-button")))
-     */
     Node* parent() const;
     Node* firstChild() const;
     Node* lastChild() const;
