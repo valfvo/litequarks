@@ -16,7 +16,7 @@
 //             .width("100%")
 //             .height("20%")))
 //         .add(new MyComponent(LQ::RuleSet("my-btn")));
-
+//         .def("myvar", "value")
 //     return EXIT_SUCCESS;
 // }
 
@@ -27,7 +27,8 @@
  *   this.float = float;
  * }
  * 
- * c'est mon texte avec un mot {bf, offset[3px 2px]: important} dedans
+ * c'est mon {it red: texte} avec un mot {bf offset[3px 2px]: important} dedans,
+ * il faut donc faire bien {weight[bold]: attention}, est-ce {it: clair} ?
  * 
  * Component c = new Component(RuleSet("my-css-like-cls"));
  * 

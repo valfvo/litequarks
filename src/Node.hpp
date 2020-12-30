@@ -4,7 +4,8 @@ namespace LQ {
 
 class Node {
 public:
-    virtual ~Node();
+    Node() {}
+    virtual ~Node() {}
 
     Node* parentNode() const { return parentNode_; }
     Node* firstChild() const { return firstChild_; }
@@ -23,9 +24,6 @@ public:
     void setLastChild(Node* child) { lastChild_ = child; }
     void setPreviousSibling(Node* previous) { previousSibling_ = previous; }
     void setNextSibling(Node* next) { nextSibling_ = next; }
-
-protected:
-    Node();
 
 private:
     void insertBeforeBase(Node& node, Node& child);

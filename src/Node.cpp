@@ -35,11 +35,10 @@ void Node::insertBeforeBase(Node& node, Node& child)
 
     child.setPreviousSibling(&node);
 
-    if (previous) {
+    if (previous)
         previous->setNextSibling(&node);
-    } else {
+    else
         setFirstChild(&node);
-    }
 
     node.setParentNode(this);
     node.setPreviousSibling(previous);
