@@ -13,3 +13,10 @@ main.exe: $(OBJ)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 -include $(OBJ:.o=.d)
+
+.PHONY: clean
+
+clean:
+	rm *.exe
+	rm *.o
+	rm *.d
