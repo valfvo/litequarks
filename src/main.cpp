@@ -1,4 +1,4 @@
-#include "LiteQuarks.hpp"
+#include "litequarks.hpp"
 
 int main()
 {
